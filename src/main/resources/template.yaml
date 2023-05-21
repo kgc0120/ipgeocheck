@@ -1,0 +1,20 @@
+Resources:
+  MyEIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+      InstanceId: !Ref MyInstance
+
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-03f54df9441e9b380
+      InstanceType: t2.micro
+      KeyName: azedaum22_aws
+      SecurityGroupIds:
+        - sg-00c529a2ce2bb295b
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          sudo yum install -y java-11-amazon-corretto.x86_64
+

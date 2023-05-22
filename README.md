@@ -16,12 +16,15 @@
 ### API URL(http://3.39.182.50:8080/ip-to-country)
 
 #### 유효한 IP 
+<img src="https://github.com/kgc0120/ipgeocheck/assets/29886664/e402de65-8cf3-4349-95f0-4dc2b47ebfd7" width="700" height="370">
+                                                                                                                             
 ```
 Request
 {
     "ip" : "223.38.90.72"
 }
-
+```
+```
 Response
 HTTP/1.1 200 OK
 {
@@ -32,12 +35,15 @@ HTTP/1.1 200 OK
 ```
 
 #### 유효하지 않는 IP
+<img src="https://github.com/kgc0120/ipgeocheck/assets/29886664/1bad836e-6bc2-4543-96eb-abd6ea1de05d" width="700" height="370">
+
 ```
 Request
 {
     "ip" : "10.0.0.1"
 }
-
+```
+```
 Response
 HTTP/1.1 404 Not Found
 {
@@ -47,12 +53,15 @@ HTTP/1.1 404 Not Found
 }
 ```
 #### 잘못된 요청
+<img src="https://github.com/kgc0120/ipgeocheck/assets/29886664/e369ec83-cb60-42f1-ba76-4d5de2c9be1c" width="700" height="370">
+
 ```
 Request
 {
     "ip123" : "223.38.90.72"
 }
-
+```
+```
 Response
 HTTP/1.1 400 Bad Request
 {

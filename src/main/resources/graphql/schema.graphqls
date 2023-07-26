@@ -5,10 +5,30 @@ type Member{
 }
 
 type Query{
-    getMember(id: ID!): Member
+    getMember(id: ID!): Member # ":" 뒤에는 리턴 값
     getMembers: [Member]
+    getIps: [IpRange]
+    getIpInfo(requestIpRangeDto: RequestIpRangeDto!): ResponseIpRangeDto
 }
 
 type Mutation{
     save(name: String!, age: Int!): Member
 }
+
+type IpRange{
+    id: ID!
+    countryCode: String!
+}
+
+type ResponseIpRangeDto{
+    ip: String!
+    countryCode: String!
+    status: Int!
+}
+
+input RequestIpRangeDto {
+    ip: String!
+}
+
+
+

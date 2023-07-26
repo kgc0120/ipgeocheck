@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -14,6 +15,10 @@ import java.util.Optional;
 public class IpRangeService {
 
     private final IpRangeRepository ipRangeRepository;
+
+    public List<IpRange> findAll() {
+        return ipRangeRepository.findAll();
+    }
 
     /**
     * IP를 확인해서 국가 코드 리턴해주는 메소드
